@@ -1,0 +1,13 @@
+<div class="row m-0 gallery-container">
+  <div (window:scroll)="onScroll()" class="col-12 d-flex flex-wrap pt-3 justify-content-around">
+    <p *ngIf="getGalleryState()!=='display'">{{getGalleryState()}}</p>
+    <div *ngFor="let photo of this.gallery; let photoIndex = index">
+      <image
+         class="pb-2" [imageData]="gallery[photoIndex]">
+      </image>
+    </div>
+  </div>
+</div>
+
+
+

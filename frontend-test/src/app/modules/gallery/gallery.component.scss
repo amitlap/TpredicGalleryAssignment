@@ -1,0 +1,20 @@
+image {
+    flex: 1 1 auto;
+}
+
+ul {
+  border: solid 3px black;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.gallery-container {
+  background-color: #e9ebee;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+
+    p {
+       width: 100%;
+       text-align: center;
+    }
+}
+

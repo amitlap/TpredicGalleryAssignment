@@ -1,0 +1,30 @@
+
+<div *ngIf="this.clickedPhotoId === '-1'" class="photos-container position-fixed row">
+  <div class="favorite-header-container">
+    <h1 class="favorite-header">Favorite Photos</h1>
+  </div>
+  <div *ngFor="let photo of this.favoritePhotos;"
+       [@EnterLeave]="'flyIn'" class="photo-card card bg-dark text-white">
+    <img class="card-img photo" [src]="photo.link" alt="Card image">
+    <div [ngStyle]="{padding: '5px'}" class="photo card-img-overlay" (click)="handlePhotoClick(photo.id, photo.link)">
+      <span>
+        <img class="card-title exit-icon" [src]="exitImgLink" (click)="removeFavoritePhoto(photo.id)"/>
+        <p class="card-text">{{'id: ' + photo.id}}</p>
+      </span>
+    </div>
+  </div>
+</div>
+<div *ngIf="this.clickedPhotoId !== '-1'" class="big-photo-background">
+  <img class="big-photo" [src]="this.clickedPhotoLink" (click)="handlePhotoClick('-1', '')">
+</div>
+
+
+
+
+
+<!--<p [ngStyle]="{width: '100%', height: '30px'}" class="mb-4">Favorite Photos</p>-->
+<!--<h1 *ngIf="this.favoritePhotos.length==0">Empty</h1>-->
+<!--<div class="card row" [ngStyle]="{height: '250px', width : '200px'}" *ngFor="let photo of this.favoritePhotos;" >-->
+<!--  <img [src]="photo.link" [ngStyle]="{height: '200px', width: '200px'}" />-->
+<!--  <button (click)="removeFavoritePhoto(photo.id)" class="btn btn-primary ">Remove</button>-->
+<!--</div>-->

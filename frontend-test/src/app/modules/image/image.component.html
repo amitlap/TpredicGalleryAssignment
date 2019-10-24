@@ -1,0 +1,10 @@
+<div class="card img-card" [ngClass]="{'img-card-clicked': this.imgClicked}" >
+  <img class="main-img"  [@changeImgSize]=currentState (click)="changeImgState()"
+       (mouseleave)="handleMouseLeaveImg()" [src]="imageLink || errorImgLink" (error)="handleError()" />
+  <div class="card-body" [@fadeCard]=currentState>
+    <p>{{'id: ' + this.imageData.id}}</p>
+    <button class="btn btn-primary" (click)="addToFavorite()" type="button">Add To Favorite</button>
+  </div>
+</div>
+<div class="dark-background" *ngIf="this.imgClicked"></div>
+
